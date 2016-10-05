@@ -7,16 +7,16 @@ I wanted additional practice in generating text with grammars. Also, who doesn't
 ## Usage
 ```
 $ python grammar.py 
-wit-ananas-crumble
-puur-kokos-crumble-zeezout-karamel
-wit-ananas-sinaasappel-crumble
-melk-kersen-crumble-kers
-wit-hazelnoot
-puur-marsepein-hazelnoot-banaan
-melk-hazelnoot
 wit-macadamia-whiskey
-wit-peper
 melk-cola-pecan
+melk-amandel-honing-chili
+melk-hazelnoot-coffee-crunch-cashewnoot
+wit-kiwi-rum
+puur-amaretto-kersen-crumble
+melk-macadamia-cashewnoot-peren-crumble
+wit-cranberry-coffee-crunch
+melk-coffee-crunch-zwarte-peper-marsepein
+puur-koffie-appel-crumble
 ```
 
 ## Used sources
