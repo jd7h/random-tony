@@ -6,13 +6,13 @@ LIMITED_EDITION -> CHOCOLADESOORT SMAKEN
 SMAKEN -> SMAAK | SMAAK SMAAK | SMAAK SMAAK SMAAK
 SMAAK -> FRUIT | FRUITS CRUMBLE | NOTEN | DRANK | SNOEPGOED | KRUIDEN | OVERIG
 CRUMBLE -> crumble
-FRUIT -> sinaasappel | ananas | peer | 	banaan | kokos | kers | cranberry | rabarber
-FRUITS -> sinaasappel | ananas | peren | bananen | kokos | kersen | cranberry | rabarber
-NOTEN -> hazelnoot | macadamia | walnoot | pecan | amandel
-DRANK -> whiskey | rum | amaretto | cola
-SNOEPGOED -> marshmallow | marsepein | popcorn | discodip | noga | merengue | karamel
-KRUIDEN -> zeezout | peper | chili | rozemarijn | anijs
-OVERIG ->   honing | coffee-crunch 
+FRUIT -> sinaasappel | ananas | peer | banaan | kokos | kers | cranberry | mango | kiwi | citroen | limoen | zwarte-bes | abrikoos
+FRUITS -> peren | bananen | kersen | cranberry | rabarber | appel
+NOTEN -> hazelnoot | macadamia | walnoot | pecan | amandel | pinda | cashewnoot
+DRANK -> whiskey | rum | amaretto | cola | koffie
+SNOEPGOED -> marshmallow | marsepein | popcorn | discodip | noga | merengue | karamel | carrot-cake
+KRUIDEN -> zeezout | zwarte-peper | chili | rozemarijn | anijs | bergamot | kaneel
+OVERIG ->   honing | coffee-crunch
 CHOCOLADESOORT -> melk | puur | wit
 """
 
