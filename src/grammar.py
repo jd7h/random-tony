@@ -20,8 +20,8 @@ PERCENTAGE -> 30% | 50% | 60% | 70% | 80% | 90%
 """
 
 class Grammar:
-	def __init__(self):
-		self.rules = {}
+    def __init__(self):
+        self.rules = {}
 
     def add_rule(self,lhs,rhs):
         self.rules[lhs] = []
@@ -46,19 +46,19 @@ class Grammar:
                     sentence.append(part)
         return sentence
 
-	def parse_rule(self,line):
-		try:
-			lhs,rhs = line.split('->')
-		except:
-			return
-		lhs = lhs.strip()
-		rhs = rhs.strip()
-		self.add_rule(lhs,rhs)
+    def parse_rule(self,line):
+        try:
+            lhs,rhs = line.split('->')
+        except:
+            return
+        lhs = lhs.strip()
+        rhs = rhs.strip()
+        self.add_rule(lhs,rhs)
 
-	def parse_grammar(self,grammarstring):
-		rules = grammarstring.split('\n')
-		for rule in rules:
-			self.parse_rule(rule)
+    def parse_grammar(self,grammarstring):
+        rules = grammarstring.split('\n')
+        for rule in rules:
+            self.parse_rule(rule)
 
 def flatten(foo):
     for x in foo:
@@ -69,10 +69,10 @@ def flatten(foo):
             yield x
 
 def generate_tony_flavours():
-	ldg = Grammar() # limited_edition_grammar
-	ldg.parse_grammar(tony)
-	for i in range(0,10):
-		print('-'.join(flatten(ldg.generate('LIMITED_EDITION'))))
+    ldg = Grammar() # limited_edition_grammar
+    ldg.parse_grammar(tony)
+    for i in range(0,10):
+        print('-'.join(flatten(ldg.generate('LIMITED_EDITION'))))
 
 
 if __name__ == "__main__":
