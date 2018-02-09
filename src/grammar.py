@@ -2,6 +2,7 @@
 import random
 
 tony = """
+S -> LIMITED_EDITION
 LIMITED_EDITION -> CHOCOLADESOORT SMAKEN
 SMAKEN -> SMAAK | SMAAK SMAAK | SMAAK SMAAK SMAAK
 SMAAK -> FRUIT | FRUITS CRUMBLE | NOTEN | DRANK | SNOEPGOED | KRUIDEN | OVERIG | RAAR
@@ -59,6 +60,31 @@ class Grammar:
         rules = grammarstring.split('\n')
         for rule in rules:
             self.parse_rule(rule)
+
+    def get_terminals(self,symbol=None):
+        if symbol != None:
+            if symbol not in self.rules.keys():
+                return []
+            else:
+                return [term for term in list(flatten(self.rules[symbol])) if not term.isupper()]
+        else:
+            return [term for term in list(flatten(self.rules.values())) if not term.isupper()]
+
+    def get_nonterminals(self):
+        lhs = set(self.rules.keys())
+        lhs.remove("S")
+        rhs = set([term for term in list(flatten(self.rules.values())) if term.isupper()])
+        if lhs != rhs:
+            return list(lhs), list(rhs)
+        return list(lhs)
+
+    # assertion: terminals are unique
+    def get_parent(self,terminal):
+        if terminal in self.get_terminals():
+            for nonterm in self.rules:
+                if terminal in self.rules[nonterm]:
+                    return nonterm
+        return None
 
 def flatten(foo):
     for x in foo:
