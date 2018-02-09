@@ -23,21 +23,28 @@ class Grammar:
 	def __init__(self):
 		self.rules = {}
 
-	def add_rule(self,lhs,rhs):
-		self.rules[lhs] = []
-		rhs = rhs.split('|') # returns list of options
-		for r in rhs:
-			self.rules[lhs].append(r.split())
+    def add_rule(self,lhs,rhs):
+        self.rules[lhs] = []
+        rhs = rhs.split('|') # returns list of options
+        for r in rhs:
+            if r.isupper(): #if non-terminal
+                self.rules[lhs].append(r.split())
+            else:
+                self.rules[lhs].append(r.strip())
 
-	def generate(self,symbol):
-		sentence = []
-		choice = random.choice(self.rules[symbol]) # pick random
-		for part in choice:
-			if part in self.rules.keys():
-				sentence.append(self.generate(part))
-			else:
-				sentence.append(part)
-		return sentence
+    def generate(self,symbol):
+        sentence = []
+        choice = random.choice(self.rules[symbol]) # pick random)
+        if type(choice) != list:
+            sentence.append(choice)
+            return sentence
+        else:
+            for part in choice:
+                if part in self.rules.keys():
+                        sentence.append(self.generate(part))
+                else:
+                    sentence.append(part)
+        return sentence
 
 	def parse_rule(self,line):
 		try:
