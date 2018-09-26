@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import random
-from tonygrammar import tony_nl as tony
 
 class Grammar:
     def __init__(self):
@@ -75,13 +74,3 @@ def flatten(foo):
                 yield y
         else:
             yield x
-
-def generate_tony_flavours():
-    ldg = Grammar() # limited_edition_grammar
-    ldg.parse_grammar(tony)
-    for i in range(0,10):
-        print('-'.join(flatten(ldg.generate('S'))))
-
-
-if __name__ == "__main__":
-    generate_tony_flavours()
