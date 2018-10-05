@@ -26,13 +26,13 @@ def format_output(generatedoutput):
         smaak = '{} with {}'.format(ingredients[0], " ".join(ingredients[1:]))
     return smaak
 
-def generate_tony_flavours():
+def generate_tony_flavours(cnt):
     ldg = cfg_generator.Grammar() # limited_edition_grammar
     ldg.parse_grammar(cfg)
-    for i in range(0,10):
+    for i in range(0,cnt):
         generatedoutput = ldg.generate('S')
         #print('-'.join(flatten(ldg.generate('S'))))
         print(format_output(generatedoutput))
 
 if __name__ == "__main__":
-     generate_tony_flavours()
+     generate_tony_flavours(10)
